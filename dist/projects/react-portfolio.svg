@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#dbeafe" />
+  <rect x="90" y="70" width="620" height="360" rx="20" fill="#ffffff" />
+  <rect x="120" y="105" width="560" height="30" rx="15" fill="#bfdbfe" />
+  <rect x="120" y="180" width="220" height="130" rx="14" fill="#2563eb" />
+  <rect x="370" y="180" width="280" height="24" rx="12" fill="#cbd5e1" />
+  <rect x="370" y="225" width="220" height="18" rx="9" fill="#e2e8f0" />
+  <rect x="370" y="265" width="170" height="18" rx="9" fill="#e2e8f0" />
+  <text x="400" y="385" text-anchor="middle" fill="#1e3a8a" font-family="Arial, sans-serif" font-size="30" font-weight="700">React Portfolio</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title description">
+  <title id="title">프로필 이미지 자리</title>
+  <desc id="description">나중에 프로필 사진으로 교체할 수 있는 기본 이미지입니다.</desc>
+  <rect width="400" height="400" fill="#e0e7ff" />
+  <circle cx="200" cy="150" r="70" fill="#93c5fd" />
+  <path d="M75 360c12-82 66-128 125-128s113 46 125 128" fill="#60a5fa" />
+</svg>

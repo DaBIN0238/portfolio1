@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f3e8ff" />
+  <rect x="90" y="70" width="620" height="360" rx="20" fill="#ffffff" />
+  <rect x="170" y="110" width="460" height="45" rx="22" fill="#e9d5ff" />
+  <circle cx="595" cy="132" r="12" fill="#7e22ce" />
+  <rect x="135" y="190" width="150" height="130" rx="12" fill="#c084fc" />
+  <rect x="325" y="190" width="150" height="130" rx="12" fill="#a855f7" />
+  <rect x="515" y="190" width="150" height="130" rx="12" fill="#7e22ce" />
+  <text x="400" y="385" text-anchor="middle" fill="#581c87" font-family="Arial, sans-serif" font-size="30" font-weight="700">Movie Search App</text>
+</svg>

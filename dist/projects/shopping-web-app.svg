@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#dcfce7" />
+  <rect x="90" y="70" width="620" height="360" rx="20" fill="#ffffff" />
+  <rect x="120" y="105" width="560" height="30" rx="15" fill="#bbf7d0" />
+  <rect x="125" y="175" width="145" height="135" rx="14" fill="#86efac" />
+  <rect x="295" y="175" width="145" height="135" rx="14" fill="#4ade80" />
+  <rect x="465" y="175" width="145" height="135" rx="14" fill="#22c55e" />
+  <path d="M545 330h55l-8 42h-40l-7-42Zm12-35h30l10 35h-50l10-35Z" fill="#166534" />
+  <text x="400" y="385" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="30" font-weight="700">Shopping Web App</text>
+</svg>
