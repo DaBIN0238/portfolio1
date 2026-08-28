@@ -9,6 +9,7 @@ body {
   font-family: Inter, Pretendard, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -69,6 +70,33 @@ img {
   color: #0f172a;
   font-size: 1.125rem;
   font-weight: 800;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  color: inherit;
+  background-color: #ffffff;
+  font-size: 1.125rem;
+  box-shadow: none;
+}
+
+.theme-toggle:hover {
+  background-color: #f8fafc;
+  transform: none;
+  box-shadow: none;
 }
 
 .menu-toggle {
@@ -419,6 +447,18 @@ img {
   display: flex;
   gap: 0.75rem;
   margin-top: 1.5rem;
+}
+
+.project-card__versions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.project-card__versions .project-card__button {
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  font-size: 0.75rem;
 }
 
 .project-card__button {
@@ -787,7 +827,8 @@ img {
     padding: 1.25rem;
   }
 
-  .project-card__actions {
+  .project-card__actions,
+  .project-card__versions {
     flex-wrap: wrap;
   }
 
@@ -836,7 +877,8 @@ img {
   }
 
   .hero__actions,
-  .project-card__actions {
+  .project-card__actions,
+  .project-card__versions {
     flex-direction: column;
   }
 
@@ -849,4 +891,165 @@ img {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
+}
+
+/* ===== Dark mode (night mode) ===== */
+html.dark body {
+  color: #e2e8f0;
+  background-color: #0f172a;
+}
+
+html.dark a {
+  color: #60a5fa;
+}
+
+html.dark a:hover {
+  color: #93c5fd;
+}
+
+html.dark .site-header {
+  border-bottom-color: #1e293b;
+  background-color: rgb(15 23 42 / 92%);
+}
+
+html.dark .site-header__brand {
+  color: #f8fafc;
+}
+
+html.dark .theme-toggle,
+html.dark .menu-toggle {
+  border-color: #334155;
+  background-color: #1e293b;
+}
+
+html.dark .theme-toggle:hover,
+html.dark .menu-toggle:hover {
+  background-color: #273449;
+}
+
+html.dark .menu-toggle__line {
+  background-color: #e2e8f0;
+}
+
+html.dark .site-navigation a {
+  color: #cbd5e1;
+}
+
+html.dark .site-navigation a:hover {
+  color: #60a5fa;
+}
+
+html.dark .site-navigation a:hover,
+html.dark .site-navigation--open .site-navigation a:hover {
+  background-color: #1e293b;
+}
+
+html.dark .page-section {
+  border-bottom-color: #1e293b;
+  background-color: #0f172a;
+}
+
+html.dark .page-section:nth-of-type(even) {
+  background-color: #111c33;
+}
+
+html.dark .section-title,
+html.dark .hero__title,
+html.dark .about__profile-item dd,
+html.dark .skill-card__title,
+html.dark .project-card__title,
+html.dark .timeline__title {
+  color: #f8fafc;
+}
+
+html.dark .hero__description,
+html.dark .about__description,
+html.dark .contact__description,
+html.dark .skill-card__description,
+html.dark .project-card__description,
+html.dark .timeline__description,
+html.dark .site-footer {
+  color: #94a3b8;
+}
+
+html.dark .hero__button--secondary {
+  border-color: #334155;
+  color: #e2e8f0;
+  background-color: #1e293b;
+}
+
+html.dark .hero__button--secondary:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+html.dark .hero__profile,
+html.dark .project-card__image {
+  background-color: #1e293b;
+}
+
+html.dark .about__profile-card,
+html.dark .skill-card,
+html.dark .project-card,
+html.dark .contact-form {
+  border-color: #1e293b;
+  background-color: #16223b;
+  box-shadow: 0 16px 35px rgb(0 0 0 / 30%);
+}
+
+html.dark .skill-card:hover,
+html.dark .project-card:hover {
+  border-color: #334155;
+}
+
+html.dark .about__profile-item {
+  border-bottom-color: #1e293b;
+}
+
+html.dark .about__profile-item dt,
+html.dark .contact__detail dd,
+html.dark .skill-card__level,
+html.dark .site-footer__links a {
+  color: #94a3b8;
+}
+
+html.dark .timeline::before {
+  background-color: #334155;
+}
+
+html.dark .timeline__marker {
+  border-color: #1e3a8a;
+}
+
+html.dark .project-card__button--secondary {
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+html.dark .project-card__button--secondary:hover {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+html.dark .project-card__button--disabled {
+  border-color: #1e293b;
+  color: #64748b;
+  background-color: #16223b;
+}
+
+html.dark .contact-form input,
+html.dark .contact-form textarea {
+  border-color: #334155;
+  color: #e2e8f0;
+  background-color: #0f172a;
+}
+
+html.dark .contact-form input:focus,
+html.dark .contact-form textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgb(96 165 250 / 18%);
+}
+
+html.dark .site-footer__links a:hover {
+  color: #60a5fa;
 }
