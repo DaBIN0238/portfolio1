@@ -25,14 +25,14 @@ const projects = [
     },
     github: null,
   },
-  {
-    title: 'Shopping Web App',
+{
+    title: 'Media Market Gallery',
     description: '상품을 탐색하고 장바구니를 관리할 수 있는 쇼핑 웹 애플리케이션입니다.',
     skills: 'JavaScript · React · API',
     image: '/projects/shopping-web-app.svg',
-    demo: null,
+    demo: 'https://dabin0238.github.io/media-market-gallery/',
     github: null,
-  },
+},
   {
     title: 'Movie Search App',
     description: '영화 정보를 검색하고 원하는 작품을 찾아볼 수 있는 웹 서비스입니다.',
@@ -251,14 +251,21 @@ function PortfolioApp() {
                     <p className="project-card__tech">{project.skills}</p>
                     <div className="project-card__actions">
                       {project.demo ? (
-                        <span className="project-card__button project-card__button--primary" aria-disabled="true">프로젝트 보기</span>
-                      ) : (
-                        <span className="project-card__button project-card__button--disabled" aria-disabled="true">프로젝트 보기 준비 중</span>
-                      )}
-                      {project.github ? (
-                        <a className="project-card__button project-card__button--secondary" href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                      ) : (
-                        <span className="project-card__button project-card__button--disabled" aria-disabled="true">GitHub 준비 중</span>
+                      <a
+                        className="project-card__button project-card__button--primary"
+                        href={typeof project.demo === 'string' ? project.demo : '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        프로젝트 보기
+                      </a>
+                    ) : (
+                      <span
+                        className="project-card__button project-card__button--disabled"
+                        aria-disabled="true"
+                      >
+                        프로젝트 보기 준비 중
+                      </span>
                       )}
                     </div>
                     {project.demo && typeof project.demo === 'object' && (
