@@ -2,54 +2,110 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const skills = [
-  { name: 'HTML', description: '웹페이지의 기본 구조를 만들며 기초를 익히고 있습니다.', status: 'Practicing' },
-  { name: 'CSS', description: '레이아웃과 반응형 화면을 구성하는 방법을 연습하고 있습니다.', status: 'Practicing' },
-  { name: 'JavaScript', description: '웹페이지에 동작과 기능을 더하는 방법을 배우고 있습니다.', status: 'Learning' },
-  { name: 'React', description: '컴포넌트 단위로 화면을 만드는 방법을 공부하고 있습니다.', status: 'Practicing' },
-  { name: 'Vite', description: '프로젝트를 실행하고 개발하는 도구로 활용해보고 있습니다.', status: 'Familiar' },
-  { name: 'Figma', description: '웹페이지의 화면 구성과 흐름을 직접 그려보고 있습니다.', status: 'Familiar' },
-  { name: 'Git', description: '작업 내용을 기록하고 관리하는 방법을 익히고 있습니다.', status: 'Learning' },
-  { name: 'GitHub', description: '프로젝트를 저장하고 공유하는 용도로 사용해보고 있습니다.', status: 'Familiar' },
-]
+  {
+    name: 'HTML',
+    description: '시맨틱 마크업을 기반으로 웹페이지 구조를 구성합니다.',
+    status: 'Frontend'
+  },
+
+  {
+    name: 'CSS',
+    description: '레이아웃과 미디어 쿼리를 활용해 반응형 화면을 구현합니다.',
+    status: 'Frontend'
+  },
+
+  {
+    name: 'JavaScript',
+    description: '기본 문법과 이벤트 처리를 활용해 웹페이지의 동작을 구현합니다.',
+    status: 'Frontend'
+  },
+
+  {
+    name: 'React',
+    description: '컴포넌트 기반으로 UI를 구성하고 상태를 활용한 기능을 구현합니다.',
+    status: 'Frontend'
+  },
+
+  {
+    name: 'Vite',
+    description: 'Vite 기반 React 프로젝트를 구성하고 개발 환경을 실행합니다.',
+    status: 'Development'
+  },
+
+  {
+    name: 'Figma',
+    description: 'UI 디자인, 컴포넌트, 오토 레이아웃과 프로토타입을 활용해 반응형 화면을 설계합니다.',
+    status: 'UI/UX'
+  },
+
+  {
+    name: 'Git',
+    description: 'Git을 활용해 프로젝트의 변경 사항과 버전을 관리합니다.',
+    status: 'Version Control'
+  },
+
+  {
+    name: 'GitHub',
+    description: '프로젝트 저장소를 관리하고 작업물을 배포·공유합니다.',
+    status: 'Version Control'
+  },
+];
 
 const projects = [
   {
     title: '투게더로그',
     skills: 'React · CSS · Vite',
     description: '함께 정하고, 함께 기록하는 우리만의 모임 공간',
-    image: '/projects/react-portfolio.svg',
-    demo: {
-      desktop: `${import.meta.env.BASE_URL}togetherlog(PC).pdf`,
-      tablet: `${import.meta.env.BASE_URL}togetherlog(태블릿).pdf`,
-      mobile: `${import.meta.env.BASE_URL}togetherlog(모바일).pdf`,
+    image: `${import.meta.env.BASE_URL}projects/togetherlog-preview.png`,
+
+   
+    // Figma Prototype
+    figma: {
+      desktop: 'https://www.figma.com/proto/WF4huZJGtQ54CMhePhpUI1/%ED%88%AC%EA%B2%8C%EB%8D%94-%EB%A1%9C%EA%B7%B8?node-id=135-3&viewport=1075%2C-35%2C0.1&t=xIso545nccYsiDyw-1&scaling=min-zoom&content-scaling=fixed&page-id=135%3A2',
+
+      tablet: 'https://www.figma.com/proto/WF4huZJGtQ54CMhePhpUI1/%ED%88%AC%EA%B2%8C%EB%8D%94-%EB%A1%9C%EA%B7%B8?node-id=178-494&viewport=1075%2C-35%2C0.1&t=xIso545nccYsiDyw-1&scaling=min-zoom&content-scaling=fixed&page-id=135%3A2',
+
+      mobile: 'https://www.figma.com/proto/WF4huZJGtQ54CMhePhpUI1/%ED%88%AC%EA%B2%8C%EB%8D%94-%EB%A1%9C%EA%B7%B8?node-id=184-482&viewport=1075%2C-35%2C0.1&t=xIso545nccYsiDyw-1&scaling=min-zoom&content-scaling=fixed&page-id=135%3A2',
     },
+
     github: null,
   },
-{
-    title: 'Media Market Gallery',
-    description: '상품을 탐색하고 장바구니를 관리할 수 있는 쇼핑 웹 애플리케이션입니다.',
-    skills: 'JavaScript · React · API',
-    image: '/projects/shopping-web-app.svg',
-    demo: 'https://dabin0238.github.io/media-market-gallery/',
-    github: null,
-},
   {
-    title: 'Movie Search App',
-    description: '영화 정보를 검색하고 원하는 작품을 찾아볼 수 있는 웹 서비스입니다.',
-    skills: 'React · API · CSS',
-    image: '/projects/movie-search-app.svg',
-    demo: null,
-    github: null,
+  title: '토끼와 강아지의 하루 | AI 브이로그',
+  description: 'AI 영상 도구로 장면을 제작하고, 만남부터 귀가까지 이어지는 숏폼 브이로그를 30초·60초 버전으로 편집했습니다.',
+  skills: 'AI 영상 제작 · 스토리보드 · 영상 편집',
+  image: `${import.meta.env.BASE_URL}projects/rabbit-dog-vlog.png`,
+  videos: {
+  short: `${import.meta.env.BASE_URL}videos/rabbit-dog-30s.mp4`,
+  full: `${import.meta.env.BASE_URL}videos/rabbit-dog-60s.mp4`,
   },
+  plan: `${import.meta.env.BASE_URL}projects/rabbit-dog-plan.pdf`,
+  demo: null,
+  github: null,
+},
+{
+  title: '온결 | 스킨케어 웹사이트',
+  description: '자연과 과학을 결합한 스킨케어 브랜드 온결의 반응형 웹사이트를 기획하고 디자인했습니다.',
+  skills: 'Figma · UI/UX 디자인 · 반응형 웹',
+  image: `${import.meta.env.BASE_URL}projects/public-projects-ongyeol.png`,
+  demo: null,
+  github: null,
+  figma: {
+  desktop:'https://www.figma.com/design/ncqjhrdNkxC2v7TtFXLKzA/%EC%98%A8%EA%B2%B0---%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=1-5&t=IL2TOyiiBYj3iOax-1',
+  tablet: 'https://www.figma.com/design/ncqjhrdNkxC2v7TtFXLKzA/%EC%98%A8%EA%B2%B0---%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=1-11259&t=IL2TOyiiBYj3iOax-1',
+  mobile: 'https://www.figma.com/design/ncqjhrdNkxC2v7TtFXLKzA/%EC%98%A8%EA%B2%B0---%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=1-13878&t=IL2TOyiiBYj3iOax-1',
+  detail: 'https://www.figma.com/design/ncqjhrdNkxC2v7TtFXLKzA/%EC%98%A8%EA%B2%B0---%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=1-11258&t=IL2TOyiiBYj3iOax-1',
+},
+},
 ]
 
 const experiences = [
   {
     year: '2026',
-    title: 'Learning Web Design & Frontend',
-    description: 'HTML과 CSS 기초부터 JavaScript, React까지 웹 개발을 공부하고 있습니다. UI/UX와 Figma를 함께 익히며 개인 프로젝트를 직접 만들어보고, Git과 GitHub를 활용한 프로젝트 관리 및 배포 방법도 알아가고 있습니다.',
+    title: 'Web Design & Frontend Development',
+    description: 'UI/UX 설계와 Figma를 활용한 웹 디자인부터 HTML, CSS, JavaScript, React 기반의 프론트엔드 개발까지 경험하고 있습니다. 반응형 웹과 프로젝트 구현을 통해 디자인을 실제 웹 화면으로 구현하고, Git과 GitHub를 활용해 프로젝트를 관리하고 배포합니다.',
   },
-]
+];
 
 function getResponsiveDemoUrl(demo, viewportWidth) {
   if (!demo || typeof demo === 'string') {
@@ -184,7 +240,7 @@ function PortfolioApp() {
             <div className="hero__profile">
               <img
                 className="hero__profile-image"
-                src="/profile-placeholder.svg"
+                src={`${import.meta.env.BASE_URL}profile.png`}
                 alt="이다빈 프로필 이미지"
               />
             </div>
@@ -195,9 +251,9 @@ function PortfolioApp() {
             <div className="about__intro">
               <h2 id="about-title" className="section-title">ABOUT ME</h2>
               <p className="about__description">
-                새로운 것을 배우고, 배운 내용을 직접 웹페이지로 만들어보는 과정을 좋아합니다.
-                현재 웹디자인과 웹개발을 함께 공부하며 HTML, CSS, JavaScript, React 등을 익히고 있습니다.
-                작은 프로젝트를 하나씩 직접 만들어보며 경험을 쌓고, 앞으로 더 좋은 사용자 경험을 만드는 방향으로 성장하고 싶습니다.
+              사용자 경험을 고려한 UI를 설계하고 웹 화면으로 구현합니다.<br />
+              Figma를 활용한 UI/UX 디자인과 React 기반의 프론트엔드 개발을 경험하고 있습니다.<br />
+              직접 기획하고 구현하며 디자인과 개발을 연결하는 프로젝트를 만들어가고 있습니다.
               </p>
             </div>
 
@@ -250,31 +306,94 @@ function PortfolioApp() {
                     <p className="project-card__description">{project.description}</p>
                     <p className="project-card__tech">{project.skills}</p>
                     <div className="project-card__actions">
-                      {project.demo ? (
-                      <a
-                        className="project-card__button project-card__button--primary"
-                        href={typeof project.demo === 'string' ? project.demo : '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        프로젝트 보기
-                      </a>
-                    ) : (
-                      <span
-                        className="project-card__button project-card__button--disabled"
-                        aria-disabled="true"
-                      >
-                        프로젝트 보기 준비 중
-                      </span>
-                      )}
-                    </div>
-                    {project.demo && typeof project.demo === 'object' && (
-                      <div className="project-card__versions" aria-label={`${project.title} 화면별 PDF`}>
-                        <a className="project-card__button project-card__button--secondary" href={project.demo.desktop} target="_blank" rel="noopener noreferrer">PC PDF</a>
-                        <a className="project-card__button project-card__button--secondary" href={project.demo.tablet} target="_blank" rel="noopener noreferrer">태블릿 PDF</a>
-                        <a className="project-card__button project-card__button--secondary" href={project.demo.mobile} target="_blank" rel="noopener noreferrer">모바일 PDF</a>
-                      </div>
-                    )}
+                {typeof project.demo === 'string' && (
+                  <a
+                    className="project-card__button project-card__button--primary"
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    프로젝트 보기
+                  </a>
+                )}
+                {project.videos && (
+                <>
+                  <a
+                    className="project-card__button project-card__button--secondary"
+                    href={project.videos.short}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    30초 영상
+                  </a>
+                  <a
+                    className="project-card__button project-card__button--secondary"
+                    href={project.videos.full}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    60초 영상
+                  </a>
+                     {project.plan && (
+                  <a
+                    className="project-card__button project-card__button--secondary"
+                    href={project.plan}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    영상 기획서
+                  </a>
+                )}
+
+              </>
+              )}
+              </div>
+             
+              {project.figma && (
+            <div
+              className="project-card__versions"
+              aria-label={`${project.title} 화면별 Figma`}
+            >
+              <a
+                className="project-card__button project-card__button--secondary"
+                href={project.figma.desktop}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.figma.detail ? '마이페이지 PC' : 'PC Figma'}
+              </a>
+
+              <a
+                className="project-card__button project-card__button--secondary"
+                href={project.figma.tablet}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.figma.detail ? '마이페이지 태블릿' : '태블릿 Figma'}
+              </a>
+
+              <a
+                className="project-card__button project-card__button--secondary"
+                href={project.figma.mobile}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.figma.detail ? '마이페이지 모바일' : '모바일 Figma'}
+              </a>
+
+              {project.figma.detail && (
+                <a
+                  className="project-card__button project-card__button--secondary"
+                  href={project.figma.detail}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  비타민 C 상세페이지 PC
+                </a>
+              )}
+            </div>
+          )}
+                    
                   </div>
                 </article>
               ))}
@@ -309,7 +428,7 @@ function PortfolioApp() {
               <dl className="contact__details">
                 <div className="contact__detail">
                   <dt>Email</dt>
-                  <dd>이메일 주소를 추가해주세요.</dd>
+                  <dd>dl.dabin02@gmail.com</dd>
                 </div>
                 <div className="contact__detail">
                   <dt>GitHub</dt>
@@ -342,7 +461,7 @@ function PortfolioApp() {
           <p>© 2026 DaBin Portfolio</p>
           <nav className="site-footer__links" aria-label="Footer links">
             <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="mailto:your-email@example.com">Email</a>
+            <a href="mailto:dl.dabin02@gmail.com">Email</a>
           </nav>
         </div>
       </footer>
