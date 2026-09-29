@@ -101,9 +101,34 @@ const projects = [
 
 const experiences = [
   {
-    year: '2026',
-    title: 'Web Design & Frontend Development',
-    description: 'UI/UX 설계와 Figma를 활용한 웹 디자인부터 HTML, CSS, JavaScript, React 기반의 프론트엔드 개발까지 경험하고 있습니다. 반응형 웹과 프로젝트 구현을 통해 디자인을 실제 웹 화면으로 구현하고, Git과 GitHub를 활용해 프로젝트를 관리하고 배포합니다.',
+    year: '2026.07',
+    title: 'Figma · UI/UX Design',
+    description:
+      '프레임과 레이아웃 기초부터 Auto Layout, Component, Variable, Grid, Prototype 등을 학습하며 반응형 웹 UI 설계를 이어가고 있습니다.',
+  },
+  {
+    year: '2026.07',
+    title: 'HTML · CSS / Web Publishing',
+    description:
+      'HTML 시맨틱 구조와 CSS, Flexbox, Grid, 미디어 쿼리를 학습하며 다양한 반응형 웹페이지를 직접 구현했습니다.',
+  },
+  {
+    year: '2026.08',
+    title: 'JavaScript',
+    description:
+      '데이터 타입, 조건문, 반복문, 배열, 함수, 객체와 DOM 등을 학습하며 웹 인터랙션 구현의 기초를 익혔습니다.',
+  },
+  {
+    year: '2026.08',
+    title: 'React',
+    description:
+      'Component, Props, State, Router, CRUD와 로그인·회원가입 기능 등을 학습하며 React 기반 웹 기능을 구현하고 있습니다.',
+  },
+  {
+    year: '2026.09',
+    title: 'Team Project',
+    description:
+      'Figma를 활용한 UI 설계와 웹 개발을 연결해 팀 프로젝트를 진행하며 화면 설계, 기능 구현, 협업 경험을 쌓고 있습니다.',
   },
 ];
 
@@ -240,8 +265,8 @@ function PortfolioApp() {
             <div className="hero__profile">
               <img
                 className="hero__profile-image"
-                src={`${import.meta.env.BASE_URL}profile.png`}
-                alt="이다빈 프로필 이미지"
+                src={`${import.meta.env.BASE_URL}frontend-illustration.png`}
+                alt="프론트엔드 개발자 일러스트"
               />
             </div>
           </div>
